@@ -20,6 +20,8 @@ services:
     depends_on:
       minio-ready:
         condition: service_completed_successfully
+      create_s3_buckets:
+        condition: service_completed_successfully
       db-ready:
         condition: service_completed_successfully
 
